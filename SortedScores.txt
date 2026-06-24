@@ -1,0 +1,8 @@
+Sorted Test Scores
+------------------
+6
+456
+456
+
+Lowest score dropped: 6
+Average after dropping lowest: 456

@@ -27,10 +27,10 @@ int main() {
     int numScores;
 
     cout << "Enter the number of test scores (minimum 2): ";
-    cin >> numScores;
-    while (numScores < 2) {
+    while (!(cin >> numScores) || numScores < 2) {
+        cin.clear();
+        cin.ignore(1000, '\n');
         cout << "Please enter 2 or more: ";
-        cin >> numScores;
     }
 
     float* scores = new float[numScores];
@@ -38,10 +38,10 @@ int main() {
     for (int i = 0; i < numScores; i++) {
         float score;
         cout << "Enter score " << (i + 1) << ": ";
-        cin >> score;
-        while (score < 0.0f) {
+        while (!(cin >> score) || score < 0.0f) {
+            cin.clear();
+            cin.ignore(1000, '\n');
             cout << "Score must be 0 or more. Enter again: ";
-            cin >> score;
         }
         scores[i] = score;
     }
